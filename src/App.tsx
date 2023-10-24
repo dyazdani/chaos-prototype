@@ -2,6 +2,7 @@ import { useEffect, useState } from "react"
 import "./App.css"
 import { GameState } from "./logic.ts"
 import { Players } from "rune-games-sdk/multiplayer"
+import ColorTokenSelectDiv from "./components/ColorTokenSelectDiv.tsx"
 
 function App() {
   const [game, setGame] = useState<GameState>()
@@ -30,6 +31,7 @@ function App() {
     <>
       <h1>Pacrazi</h1>
       <h2>Choose your color</h2>
+      <ColorTokenSelectDiv playersReady={game.playersReady} numberOfPlayers={game.allPlayerIds.length} />
     </>
   )
 }
